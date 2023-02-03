@@ -1,0 +1,14 @@
+---
+const {
+	article: { img, url, title, desc }
+} = Astro.props;
+---
+
+<article class='article'>
+	<div class='content'>
+		<img src={img} alt='xx' />
+		<h3>{title}</h3>
+		<p>{desc}</p>
+	</div>
+	<a href={url} target="_blank" class='cta'>learn more</a>
+</article>

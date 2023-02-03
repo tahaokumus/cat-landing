@@ -1,0 +1,29 @@
+.section.section-references {
+	padding-bottom: 1.5rem;
+	.landing-card {
+		--card-border-radius: 0.5rem;
+		--card-padding: 1rem;
+
+		p {
+			margin: 0;
+			--font-size: 0.75rem;
+			--font-color: black;
+
+			&:not(:last-of-type) {
+				margin-bottom: 0.5rem;
+			}
+		}
+	}
+}
+
+@media screen and ($screen-tablet) {
+	.section.section-references {
+		padding-bottom: 2.25rem;
+	}
+}
+
+@media screen and ($screen-mobile) {
+	.section.section-references {
+		padding-bottom: 0.75rem;
+	}
+}

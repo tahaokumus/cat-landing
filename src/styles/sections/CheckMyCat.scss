@@ -1,0 +1,220 @@
+@import '../constants';
+
+.section.section-my-cat {
+	.landing-card {
+		--card-padding: 5rem 0;
+		overflow: hidden;
+	}
+	.container {
+		flex-direction: row !important;
+		justify-content: space-between;
+		align-items: center;
+		@include hGap(4.5rem);
+	}
+
+	.content {
+		.title {
+			margin: 0 0 1rem;
+		}
+
+		.description {
+			margin-bottom: 2rem;
+
+			& > * {
+				margin: 0;
+			}
+		}
+
+		.cta-wrapper {
+			height: 60px;
+		}
+
+		.cta {
+			display: inline-flex;
+			padding: 1rem 2rem;
+			background-color: white;
+			border-radius: 3rem;
+			text-decoration: none;
+			--font-color: var(--pink-900);
+			--font-weight: 700;
+			--font-size: 1.5rem;
+			--line-height: 1.75rem;
+
+			&:hover {
+				color: var(--pink-900) !important;
+			}
+
+			&.fixed {
+				position: fixed;
+				bottom: 2rem;
+			}
+
+			&.pink {
+				background-color: var(--pink-500);
+				color: white;
+				box-shadow: 0px 0px 59px rgba(170, 0, 97, 0.58);
+
+				&:hover {
+					color: white !important;
+				}
+			}
+		}
+	}
+
+	.media {
+		display: grid;
+		margin-right: -2.5rem;
+
+		.blurred {
+			filter: blur(80px);
+			z-index: 1;
+		}
+
+		div {
+			display: grid;
+		}
+
+		* {
+			grid-area: 1/1;
+			z-index: 2;
+		}
+	}
+}
+
+@media screen and ($screen-small) {
+	.section.section-my-cat {
+		.landing-card {
+			--card-padding: 8.5rem 4.5rem 2.25rem;
+			margin-top: -5rem;
+		}
+
+		.container {
+			@include hGap(1.25rem);
+			align-items: center;
+		}
+
+		.content {
+			.title {
+				width: 80%;
+				--font-size: 1.75rem;
+				--line-height: 2.25rem;
+			}
+
+			.description {
+				margin-bottom: 1.5rem;
+
+				p {
+					--font-size: 0.875rem;
+				}
+			}
+
+			.cta-wrapper {
+				height: 62px;
+			}
+
+			.cta {
+				--font-size: 1.25rem;
+				--line-height: 1.5;
+				width: 100%;
+				max-width: 20rem;
+				justify-content: center;
+				z-index: 99;
+			}
+		}
+
+		.media {
+			position: absolute;
+			right: 0;
+			margin-right: 0;
+			max-width: 35%;
+
+			img {
+				width: 100%;
+			}
+		}
+	}
+}
+
+@media screen and ($screen-tablet) {
+	.section.section-my-cat {
+		.landing-card {
+			position: relative;
+			overflow: hidden;
+			padding: 8.5rem 1.5rem 2.25rem;
+
+			.container {
+				.content {
+					.title {
+						width: 75%;
+					}
+
+					.description {
+						max-width: calc(67%);
+					}
+
+					.cta-wrapper {
+						display: flex;
+						justify-content: center;
+					}
+
+					.cta.fixed {
+						left: 50%;
+						transform: translateX(-50%);
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and ($screen-mobile) {
+	.section.section-my-cat {
+		.landing-card {
+			padding: 3.5rem 1.5rem 2rem 1.5rem;
+			border-top-left-radius: 0;
+			border-top-right-radius: 0;
+			position: relative;
+			margin-top: 0;
+		}
+
+		.container {
+			@include hGap(0);
+		}
+
+		.content {
+			.title {
+				width: 75%;
+			}
+
+			.description {
+				margin-bottom: 2rem;
+				max-width: 80%;
+			}
+
+			.cta {
+				--font-size: 1.25rem;
+				--line-height: 1.5;
+				width: 100%;
+				justify-content: center;
+				max-width: unset;
+
+				&.fixed {
+					width: calc(100% - 3rem);
+				}
+			}
+		}
+
+		.media {
+			top: 0;
+		}
+	}
+}
+@media screen and ($screen-xs) {
+	.section.section-my-cat {
+		.content {
+			.description {
+				max-width: 100%;
+			}
+		}
+	}
+}

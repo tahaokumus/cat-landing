@@ -1,0 +1,247 @@
+@import '../constants';
+
+@mixin inset($val) {
+	top: $val;
+	right: $val;
+	bottom: $val;
+	left: $val;
+}
+
+.section.section-hero {
+	padding-bottom: 5rem;
+	.hero {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		align-items: center;
+		margin: 0 2.5rem 2rem;
+
+		.title {
+			--font-color: var(--gray-700);
+			margin: 0;
+			width: 100%;
+		}
+
+		img {
+			width: 460px;
+			height: auto;
+			max-width: 100%;
+		}
+	}
+
+	.stats-card {
+		.landing-card {
+			display: grid;
+			grid-template-columns: 13fr 9fr;
+			@include gridGap(1.5rem);
+		}
+
+		.content {
+			.title {
+				--font-color: black;
+				--font-size: 1.5rem;
+				--line-height: 1.75rem;
+				--font-weight: 600;
+				margin: 0 0 1.5rem;
+			}
+			.description {
+				background-color: var(--gray-100);
+				border-radius: 0.75rem;
+				padding: 1.25rem;
+				display: flex;
+				flex-direction: column;
+				@include vGap(1rem);
+
+				& > * {
+					padding: 0;
+					margin: 0;
+					--font-color: black;
+				}
+			}
+		}
+
+		.stats {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-evenly;
+
+			.stat {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				@include hGap(1.75rem);
+
+				p {
+					margin: 0;
+					--font-color: black;
+				}
+			}
+
+			.pie {
+				--p: 0;
+				--border: 0.5rem;
+				--width: 4.5rem;
+				--foreground: var(--orange-400);
+				--font-color: black;
+				--font-size: 1.25rem;
+				--line-height: 1.75rem;
+				--font-weight: 600;
+
+				width: var(--width);
+				min-width: var(--width);
+				height: var(--width);
+				aspect-ratio: 1;
+				position: relative;
+				display: inline-grid;
+				place-content: center;
+
+				&:before,
+				&:after {
+					content: '';
+					position: absolute;
+					border-radius: 50%;
+				}
+				&:before {
+					@include inset(0);
+					background: radial-gradient(
+								farthest-side,
+								var(--foreground) 98%,
+								transparent
+							)
+							top/var(--border) var(--border) no-repeat,
+						conic-gradient(
+							var(--foreground) calc(var(--p) * 1%),
+							var(--gray-300) 0
+						);
+					-webkit-mask: radial-gradient(
+						farthest-side,
+						transparent calc(99% - var(--border)),
+						#000 calc(100% - var(--border))
+					);
+					mask: radial-gradient(
+						farthest-side,
+						transparent calc(99% - var(--border)),
+						#000 calc(100% - var(--border))
+					);
+				}
+				&:after {
+					@include inset(calc(50% - var(--border) / 2));
+					background: var(--foreground);
+					transform: rotate(calc(var(--p) * 3.6deg))
+						translateY(calc(50% - var(--width) / 2));
+				}
+			}
+		}
+	}
+}
+
+@media screen and ($screen-small) {
+	.section.section-hero {
+		padding-bottom: 0;
+
+		.hero {
+			margin: 0 0 2.25rem;
+			justify-items: center;
+
+			.title {
+				--font-size: 2rem;
+			}
+		}
+
+		.stats-card {
+			.landing-card {
+				grid-template-columns: 1fr;
+				@include gridGap(2.5rem);
+				padding: 2rem 1.5rem 3rem;
+				position: relative;
+				z-index: 1;
+			}
+
+			.content {
+				.title {
+					margin: 0;
+					--font-size: 1.25rem;
+					--line-height: 1.75rem;
+				}
+
+				.icons {
+					display: flex;
+					justify-content: space-evenly;
+					@include hGap(1rem);
+
+					.icon {
+						flex-grow: 1;
+						display: flex;
+						flex-direction: column;
+						justify-content: center;
+						align-items: center;
+						@include vGap(0.5rem);
+						margin: 2rem 0 2.5rem;
+
+						p {
+							margin: 0;
+							--font-color: black;
+							--font-weight: 600;
+							--line-height: 1.25rem;
+						}
+					}
+				}
+
+				.description {
+					background-color: unset;
+					padding: 0;
+					@include vGap(0.75rem);
+				}
+			}
+
+			.stats {
+				@include vGap(2.5rem);
+				.stat {
+					@include hGap(1rem);
+				}
+
+				.pie {
+					--border: 0.375rem;
+					--width: 3.75rem;
+					--font-size: 0.75rem;
+					--line-height: 1rem;
+				}
+			}
+		}
+	}
+}
+
+@media screen and ($screen-mobile) {
+	.section.section-hero {
+		.hero {
+			grid-template-columns: 1fr;
+			@include gridGap(1.25rem);
+			justify-items: center;
+			margin: 0 0 3.5rem;
+
+			.title {
+				text-align: center;
+			}
+
+			img {
+				width: 300px;
+				grid-area: 1/1;
+			}
+		}
+
+		.stats-card {
+			background: linear-gradient(to bottom, transparent, var(--pink-900));
+
+			.landing-card {
+				@include vGap(2rem);
+				--card-padding: 2rem 1.5rem 2.5rem;
+
+				.content .icons .icon {
+					margin: 1rem 0 1.5rem;
+				}
+				.stats {
+					@include vGap(2rem);
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,56 @@
+@import '../constants';
+
+.section.section-video {
+	padding: 4rem 2.25rem 6rem;
+
+	.container {
+		.title {
+			--font-size: 1.75rem;
+			--font-color: var(--gray-700);
+			--line-height: 2.25rem;
+			--font-weight: 700;
+			text-align: center;
+			margin: 0;
+		}
+
+		iframe {
+			width: calc(100% - 15rem);
+			height: auto;
+			aspect-ratio: 1.8;
+			margin: 2.25rem 7.5rem 0;
+			border-radius: 0.75rem;
+			overflow: hidden;
+		}
+	}
+}
+
+@media screen and ($screen-small) {
+	.section.section-video {
+		padding: 2.25rem 2.25rem 6rem;
+
+		.container {
+			iframe {
+				width: 100%;
+				max-width: 30rem;
+				margin: 2.25rem auto 0;
+				border-radius: 0;
+			}
+		}
+	}
+}
+
+@media screen and ($screen-mobile) {
+	.section.section-video {
+		padding: 1.5rem 0rem 3rem;
+
+		.container {
+			.title {
+				text-align: left;
+			}
+
+			iframe {
+				margin: 1.25rem auto 0;
+			}
+		}
+	}
+}

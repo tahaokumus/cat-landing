@@ -1,0 +1,45 @@
+---
+import { sitePath } from '@scripts/utils';
+---
+
+<section class='section section-my-cat'>
+	<div class='landing-card darker'>
+		<div class='container no-mobile-padding'>
+			<div class='content'>
+				<h2 class='title'>Recognise the symptoms of arthritis</h2>
+				<div class='description'>
+					<p>
+						You know your cat better than anyone and can recognise when things
+						have changed. The signs of arthritis pain can be both physical and
+						behavioural and our simple online assessment will help you determine
+						whether your cat might benefit from a vet visit for diagnosis and
+						treatment. All you need to do is answer a few questions and then
+						we'll send you a checklist that can help you have an informed chat
+						with your vet.
+					</p>
+				</div>
+				<div class='cta-wrapper'>
+					<a href='#' class='cta' id='check-my-cat-btn'>Check my cat</a>
+				</div>
+			</div>
+			<div class='media'>
+				<div class='visible-desktop'>
+					<img src={sitePath('/assets/images/cat_yellow.png')} alt='x' />
+					<img
+						class='blurred'
+						src={sitePath('/assets/images/cat_yellow.png')}
+						alt='x'
+					/>
+				</div>
+				<div class='visible-tablet visible-mobile'>
+					<img src={sitePath('/assets/images/cat_yellow_tablet.png')} alt='x' />
+					<img
+						class='blurred'
+						src={sitePath('/assets/images/cat_yellow_tablet.png')}
+						alt='x'
+					/>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

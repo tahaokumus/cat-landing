@@ -1,0 +1,73 @@
+---
+import { sitePath } from '@scripts/utils';
+---
+
+<section class='section section-hero'>
+	<div class='container large'>
+		<div class='hero'>
+			<h1 class='title large'>
+				Is arthritis pain affecting your cat's quality of life?
+			</h1>
+			<img src={sitePath('/assets/images/cat_hero.png')} alt='' />
+		</div>
+	</div>
+	<div class='container large no-mobile-padding'>
+		<div class='stats-card'>
+			<div class='landing-card'>
+				<div class='content'>
+					<div class='visible-desktop'>
+						<h2 class='title'>Cats love to jump, bounce or climb...</h2>
+					</div>
+					<div class='visible-tablet visible-mobile'>
+						<h2 class='title'>Cats love to:</h2>
+						<div class='icons'>
+							<div class='icon'>
+								<img src={sitePath('/assets/images/jump.png')} alt='' />
+								<p>Jump</p>
+							</div>
+							<div class='icon'>
+								<img src={sitePath('/assets/images/climb.png')} alt='' />
+								<p>Climb</p>
+							</div>
+							<div class='icon'>
+								<img src={sitePath('/assets/images/pounce.png')} alt='' />
+								<p>Pounce</p>
+							</div>
+						</div>
+					</div>
+
+					<div class='description'>
+						<p>
+							But maybe you've noticed that they've become less adventurous
+							lately.
+						</p>
+						<p>
+							Are they spending more time resting or sleeping, not quite jumping
+							or playing like they used to, or do they seem a bit more grumpy?
+						</p>
+						<p>
+							This change in behaviour may have you questioning why - and
+							rightly so, as they could be signs of arthritis pain.
+						</p>
+					</div>
+				</div>
+				<div class='stats'>
+					<div class='stat'>
+						<div class='pie' style='--p: 40'>40%</div>
+						<p>
+							Arthritis affects up to 40% of cats globally1, but it can be hard
+							to spot the signs as cats are naturally good at hiding pain.
+						</p>
+					</div>
+					<div class='stat'>
+						<div class='pie' style='--p: 61'>61%</div>
+						<p>
+							It's not just older cats that are at risk - 61% of cats 6 years
+							and older show signs of arthritis in at least one joint.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

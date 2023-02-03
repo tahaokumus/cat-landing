@@ -1,0 +1,59 @@
+main {
+	.visible-desktop {
+		display: none;
+	}
+	.visible-tablet {
+		display: none;
+	}
+	.visible-mobile {
+		display: none;
+	}
+
+	@media screen and ($screen-desktop) {
+		.visible-mobile,
+		.visible-tablet {
+			&:not(.visible-desktop) {
+				display: none !important;
+			}
+		}
+
+		.visible-desktop {
+			display: initial;
+		}
+	}
+
+	@media screen and ($screen-small) {
+		.container,
+		.container.large {
+			--container-width: calc(624px + 3rem);
+
+			&.no-padding {
+				--container-width: 624px;
+			}
+		}
+
+		.visible-desktop,
+		.visible-mobile {
+			&:not(.visible-tablet) {
+				display: none !important;
+			}
+		}
+
+		.visible-tablet {
+			display: initial;
+		}
+	}
+
+	@media screen and ($screen-mobile) {
+		.visible-desktop,
+		.visible-tablet {
+			&:not(.visible-mobile) {
+				display: none !important;
+			}
+		}
+
+		.visible-mobile {
+			display: initial;
+		}
+	}
+}

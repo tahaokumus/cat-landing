@@ -1,0 +1,47 @@
+---
+import Article from '@components/Article';
+const articles = [
+	{
+		img: 'https://www.zoetispets.com/assets/images/article-photos/thumbs/zoetis-cats-21160x350.jpg',
+		url: 'http://www.zoetispets.com/uk-en/blog/cat/adapt-home-for-cat-arthritis-pain/',
+		title:
+			'Making your home easier to navigate for your cat with arthritis pain',
+		desc: 'Cat arthritis pain symptoms are often subtle and cat joint pain often looks like laziness or old age to pet owners. Learn to spot the difference.'
+	},
+	{
+		img: 'https://www.zoetispets.com/assets/images/article-photos/thumbs/acats1550-copyx350.jpg',
+		url: 'http://www.zoetispets.com/uk-en/blog/cat/inactive-cat-or-arthritis-pain/',
+		title:
+			'You might think your cat is inactive or slowing down – but could it be arthritis pain?',
+		desc: 'Cat arthritis pain symptoms are often subtle and cat joint pain often looks like laziness or old age to pet owners. Learn to spot the difference.'
+	},
+	{
+		img: 'https://www.zoetispets.com/assets/images/article-photos/thumbs/cats1714-2-backgroundx350.jpg',
+		url: 'http://www.zoetispets.com/uk-en/blog/cat/keep-cat-at-healthy-weight/',
+		title: '7 easy steps to keep your cat a healthy weight',
+		desc: 'Cat arthritis pain symptoms are often subtle and cat joint pain often looks like laziness or old age to pet owners. Learn to spot the difference.'
+	},
+	{
+		img: 'https://www.zoetispets.com/assets/images/article-photos/thumbs/acats1394x350.jpg',
+		url: 'http://www.zoetispets.com/uk-en/blog/cat/keep-stiff-cat-moving/',
+		title: 'An active cat is a healthy cat - how to keep a stiff cat moving',
+		desc: 'Cat arthritis pain symptoms are often subtle and cat joint pain often looks like laziness or old age to pet owners. Learn to spot the difference.'
+	}
+];
+---
+
+<section class='section section-articles'>
+	<div class='container'>
+		<div class='header'>
+			<h2 class='title'>More useful advice</h2>
+			<p>
+				Learn more about giving your cats, dogs and other pets a healthy and
+				enjoyable life.
+			</p>
+		</div>
+
+		<div class='articles'>
+			{articles.map((article) => <Article article={article} />)}
+		</div>
+	</div>
+</section>

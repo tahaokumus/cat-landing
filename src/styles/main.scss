@@ -1,0 +1,89 @@
+@import './constants';
+
+:root {
+	--pink-900: #9a1f5f;
+	--pink-700: #aa0061;
+	--pink-500: #d81a86;
+	--pink-400: #ef0b8d;
+	--pink-300: #ecd1df;
+	--pink-100: #f6e5ef;
+
+	--orange-400: #ff6300;
+
+	--gray-700: #373737;
+	--gray-500: #444444;
+	--gray-400: #585858;
+	--gray-300: #e0e0e0;
+	--gray-100: #fafafa;
+
+	--font-color: var(--gray-400);
+	--font-size: 1rem;
+	--line-height: 1.5rem;
+	--font-weight: 400;
+
+	--card-bg-color: white;
+	--card-border-radius: 24px;
+	--card-padding: 2.25rem;
+}
+
+body {
+	margin: 0;
+}
+
+main {
+	background-color: var(--pink-100);
+
+	* {
+		box-sizing: border-box;
+		color: var(--font-color);
+		font-size: var(--font-size);
+		line-height: var(--line-height);
+		font-weight: var(--font-weight);
+	}
+
+	*:not(.font-roboto) {
+		font-family: 'Open Sans', sans-serif;
+	}
+
+	.font-roboto {
+		font-family: 'Roboto', sans-serif;
+	}
+
+	.title {
+		--font-weight: 700;
+		--font-size: 2.25rem;
+		--line-height: 3rem;
+	}
+
+	sup {
+		--font-size: 75%;
+	}
+
+	a[target='_blank'] {
+		.external-icon {
+			display: none !important;
+		}
+
+		&::after {
+			content: '';
+			width: 9px;
+			height: 10px;
+			margin-left: 0.25rem;
+			display: inline-block;
+			background-image: url("data:image/svg+xml,%3Csvg width='9' height='10' viewBox='0 0 9 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M2.628 7.94C2.57097 7.89608 2.52513 7.83932 2.4942 7.77432C2.46326 7.70933 2.44812 7.63795 2.45 7.566V6.158H0.361C0.161 6.158 0 5.964 0 5.724V4.275C0 4.035 0.162 3.841 0.361 3.841H2.451V2.434C2.451 2.28 2.519 2.137 2.629 2.06C2.68102 2.02179 2.74366 2.00078 2.8082 1.99988C2.87274 1.99899 2.93594 2.01825 2.989 2.055L6.815 4.62C6.87446 4.66354 6.92245 4.72087 6.95485 4.78707C6.98725 4.85326 7.00309 4.92633 7.001 5C7.001 5.158 6.931 5.303 6.816 5.38L2.987 7.945C2.93513 7.98048 2.87384 7.99963 2.811 8C2.74524 7.99953 2.68127 7.97855 2.628 7.94ZM9.001 8.514C9.001 9.334 8.371 10 7.595 10H2.561C2.251 10 2.001 9.735 2.001 9.409C2.001 9.082 2.251 8.817 2.561 8.817H7.595C7.67307 8.81465 7.74703 8.78143 7.80064 8.72463C7.85425 8.66782 7.88315 8.59208 7.881 8.514V1.486C7.88315 1.40792 7.85425 1.33218 7.80064 1.27537C7.74703 1.21857 7.67307 1.18535 7.595 1.183H2.561C2.251 1.183 2.001 0.918 2.001 0.591C2.001 0.265 2.251 0 2.561 0H7.595C8.37 0 9.001 0.666 9.001 1.486V8.514Z' fill='%2300C1D5'/%3E%3C/svg%3E%0A");
+		}
+	}
+}
+
+@import 'mixins';
+@import 'visibility';
+@import 'layout';
+@import './components/Cards.scss';
+@import './sections/Hero.scss';
+@import './sections/CheckMyCat.scss';
+@import './sections/Symptoms.scss';
+@import './sections/Video.scss';
+@import './sections/Diagnosed.scss';
+@import './sections/Articles.scss';
+@import './sections/References.scss';
+@import './sections/NavBar.scss';

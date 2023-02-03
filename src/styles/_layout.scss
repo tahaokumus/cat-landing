@@ -1,0 +1,30 @@
+main {
+	.container {
+		--container-width: calc(900px + 3rem);
+		--padding: 1.5rem;
+		display: flex !important;
+		flex-direction: column !important;
+		width: 100% !important;
+		max-width: var(--container-width) !important;
+		margin: 0 auto !important;
+		padding-left: var(--padding) !important;
+		padding-right: var(--padding) !important;
+
+		&.large {
+			--container-width: calc(972px + 3rem);
+		}
+
+		@media screen and ($screen-small) {
+			&,
+			&.large,
+			&.large.no-padding,
+			&.no-padding {
+				--container-width: calc(624px);
+			}
+
+			&.no-mobile-padding {
+				--padding: 0rem !important;
+			}
+		}
+	}
+}

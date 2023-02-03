@@ -1,0 +1,64 @@
+@import '../constants';
+
+.section.section-articles {
+	padding: 2.5rem 0 3.5rem 0;
+
+	.header {
+		text-align: center;
+		margin-bottom: 2rem;
+
+		.title {
+			--font-color: var(--gray-700);
+			margin: 0 0 0.5rem 0;
+		}
+		p {
+			--font-color: black;
+			margin: 0;
+		}
+	}
+
+	.articles {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(241px, 1fr));
+    @include gridGap(1.5rem);
+
+		.article:nth-child(n + 4) {
+			display: none;
+		}
+	}
+}
+
+@media screen and ($screen-small) {
+	.section.section-articles {
+		.header {
+			margin-bottom: 1.25rem;
+
+			.title {
+				--font-size: 1.75rem;
+				font-size: 1.75rem !important;
+				--line-height: 2.25rem;
+				line-height: 2.25rem !important;
+			}
+		}
+
+		.articles .article:nth-child(n + 4) {
+			display: flex;
+		}
+	}
+}
+
+@media screen and ($screen-mobile) {
+	.section.section-articles {
+		padding: 0 0 2.25rem;
+
+		.header {
+			text-align: left;
+		}
+
+		.container .articles {
+      @include gridGap(1rem);
+		}
+	}
+}
+
+@import '../components/Article.scss';

@@ -1,0 +1,17 @@
+main {
+	.landing-card {
+		background: var(--card-bg-color);
+		border-radius: var(--card-border-radius);
+		padding: var(--card-padding);
+
+		&.dark {
+			--font-color: white;
+			--card-bg-color: var(--pink-300);
+		}
+
+		&.darker {
+			--font-color: white;
+			--card-bg-color: var(--pink-900);
+		}
+	}
+}
